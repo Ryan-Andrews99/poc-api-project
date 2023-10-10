@@ -12,12 +12,10 @@
       - Implement middleware for standard headers and error handling
       - Request Validation: Implement robust request validation to ensure incoming data is well-formed and adheres to specified constraints, helping to prevent security vulnerabilities.
 
--
-
 3. **Token-Based Authentication:**
-      - Implement token-based authentication using a library like Passport.js or JWT.
+      - Implement token-based authentication using JWT.
       - Create endpoints requesting token
-      - TTL on token, with TTL encoded in JWT
+      - TTL on token, with TTL encoded in JWT (exp claim on the token)
       - implement 401 on unauthorised requests
 
 4. **Rate Limiting:**
