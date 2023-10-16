@@ -6,7 +6,9 @@
     "test": "jest -c jest.config.ts",
     "test:cov": "jest -c jest.config.ts --coverage",
     "lint": "prettier . --check || exit 1 ; eslint . --max-warnings=0",
-    "lint:fix": "prettier . --write ; eslint . --fix"
+    "lint:fix": "prettier . --write ; eslint . --fix",
+    "build": "tsc",
+    "start": "node dist/src/server.js"
   },
   "keywords": [],
   "author": "Ryan-Andrews99 & Harrisman05",
