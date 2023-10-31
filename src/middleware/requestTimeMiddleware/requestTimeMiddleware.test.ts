@@ -2,9 +2,13 @@ import { Request, Response, NextFunction } from 'express'
 import { requestTimeMiddleware } from './requestTimeMiddleware'
 
 describe('requestTimeMiddleware tests', () => {
-  jest
-  .useFakeTimers()
-  .setSystemTime(1000)
+  beforeEach(() => {
+    jest.useFakeTimers().setSystemTime(1000)
+  })
+
+  afterEach(() => {
+    jest.useRealTimers()
+  })
 
   it('adds a timestamp to a request body', () => {
     const requestObject = {} as Request

@@ -10,7 +10,7 @@
     "sourceMap": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
-    "outDir": "./dist/src",
+    "outDir": "./dist/src"
   },
   "include": ["src"],
   "exclude": ["src/**/*.test.ts"]

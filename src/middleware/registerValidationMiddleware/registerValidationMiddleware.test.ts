@@ -7,11 +7,19 @@ describe('register Validation Middleware tests', () => {
     jest.clearAllMocks()
   })
 
-  it('it sends a 400 code if the request body is invalid', () => {
+  it.each([
+    {},
+    { email: 'bozo456@gmail.com', password: 'password123', badProp: 'aaa' },
+    { password: 'password123', badProp: 'aaa' },
+    { password: 'password123' },
+    { email: 'bozo456@gmail.com', badProp: 'aaa' },
+    { email: 'bozo456@gmail.com' },
+    { badProp: 'aaaa' }
+  ])('it sends a 400 code if the request body is invalid', (badRequestbody) => {
     const mockedResponse = mockResponseObject()
     const badRequest = {
       body: {
-        bozoProp: 'hello'
+       ...badRequestbody
       }
     } as Request
 
