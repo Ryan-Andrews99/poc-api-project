@@ -8,6 +8,8 @@
     "lint": "prettier . --check || exit 1 ; eslint . --max-warnings=0",
     "lint:fix": "prettier . --write ; eslint . --fix",
     "start:dev": "ts-node src/server.ts",
+    "db:start": "ts-node scripts/dockerStart.ts",
+    "db:stop": "ts-node scripts/dockerStop.ts",
     "build": "tsc",
     "start": "node dist/src/server.js"
   },
