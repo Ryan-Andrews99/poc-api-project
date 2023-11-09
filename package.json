@@ -4,11 +4,15 @@
   "description": "",
   "scripts": {
     "test": "jest -c jest.config.ts",
+    "test:db": "node --env-file .env -r ts-node/register scripts/testDb.ts",
     "test:cov": "jest -c jest.config.ts --coverage",
     "lint": "prettier . --check || exit 1 ; eslint . --max-warnings=0",
     "lint:fix": "prettier . --write ; eslint . --fix",
+    "start:dev": "node --env-file .env -r ts-node/register src/server.ts",
+    "db:start": "node --env-file .env -r ts-node/register scripts/dockerStart.ts",
+    "db:stop": "node --env-file .env -r ts-node/register scripts/dockerStop.ts",
     "build": "tsc",
-    "start": "node dist/src/server.js"
+    "start": "node --env-file .env dist/src/server.js"
   },
   "keywords": [],
   "author": "Ryan-Andrews99 & Harrisman05",
@@ -19,6 +23,7 @@
     "@types/jest": "^29.5.5",
     "@types/jest-when": "^3.5.4",
     "@types/node": "^20.8.3",
+    "@types/sequelize": "^4.28.17",
     "@types/supertest": "^2.0.14",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "eslint": "^8.51.0",
@@ -36,7 +41,9 @@
   },
   "dependencies": {
     "cookie-parser": "^1.4.6",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "sequelize": "^6.33.0",
+    "pg": "^8.11.3"
   },
   "lint-staged": {
     "*": "prettier --write",

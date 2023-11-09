@@ -19,7 +19,7 @@ describe('register Validation Middleware tests', () => {
     const mockedResponse = mockResponseObject()
     const badRequest = {
       body: {
-       ...badRequestbody
+        ...badRequestbody
       }
     } as Request
 
